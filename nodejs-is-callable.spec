@@ -1,7 +1,7 @@
 %{?nodejs_find_provides_and_requires}
 Name:                nodejs-is-callable
 Version:             1.1.4
-Release:             1
+Release:             2
 Summary:             Is this JS value callable?
 License:             MIT
 URL:                 https://github.com/ljharb/is-callable
@@ -27,7 +27,7 @@ cp -pr package.json index.js %{buildroot}%{nodejs_sitelib}/is-callable
 
 %check
 %nodejs_symlink_deps --check
-%{__nodejs} --es-staging test.js
+%{__nodejs} --harmony test.js
 
 %files
 %doc README.md CHANGELOG.md
@@ -35,5 +35,8 @@ cp -pr package.json index.js %{buildroot}%{nodejs_sitelib}/is-callable
 %{nodejs_sitelib}/is-callable
 
 %changelog
+* Thu Mar 01 2022 Yongqing chen <chenyongqingdl@gmail.com> - 1.1.4-2
+- Replace --es-staging  with --harmony option 
+
 * Thu Aug 20 2020 wangxiao <wangxiao65@huawei.com> - 1.1.4-1
 - Package init
